@@ -25,6 +25,7 @@
   "derivation": {
     "method": "BRIEF.md was read and split; no design decision was taken. Every fixed_requirements entry, and every spec-table row sourced from the brief, carries a quotation that was checked by literal substring match against the brief bytes digested above. The build refuses to emit this file if any quotation is not found.",
     "quotations_verified": 25,
+    "where_the_quotations_are": "Every one of them is in this file: fixed_requirements[].brief_evidence and brief_spec_rows[].brief_evidence. The count above is the sum of those two lists, so it is recomputable from this repository alone - re-read BRIEF.md and check each string is a substring of it. brief_spec_rows carries the quotations behind the README's spec table, which would otherwise cite the brief with the evidence left in a build script.",
     "review": "two rounds of adversarial review against the brief, looking for invented requirements, lost requirements, evidence supporting a weaker claim than the one made beside it, and worksheet questions that presuppose their own answer"
   },
   "fixed_requirements": [
@@ -97,6 +98,63 @@
       "id": "REQ-14",
       "requirement": "Requirements the brief does state are authoritative: they may not be loosened, reopened as choices, or traded away in the course of making the open decisions.",
       "brief_evidence": "Treat stated requirements as authoritative; where the brief leaves choices open"
+    }
+  ],
+  "brief_spec_rows": [
+    {
+      "aspect": "Operating band",
+      "value": "902–928 MHz ISM band",
+      "brief_evidence": "Design a sub-GHz telemetry node for the 902–928 MHz ISM band"
+    },
+    {
+      "aspect": "Radio",
+      "value": "A modern packet radio transceiver — no device, vendor or modulation family named",
+      "brief_evidence": "ISM band using a modern packet radio transceiver and an MCU."
+    },
+    {
+      "aspect": "Digital controller",
+      "value": "An MCU — no architecture, family, package or vendor named",
+      "brief_evidence": "using a modern packet radio transceiver and an MCU. Target materially longer range"
+    },
+    {
+      "aspect": "Range goal",
+      "value": "Materially longer range than a bare low-power radio (no distance or dB figure given)",
+      "brief_evidence": "Target materially longer range than a bare low-power radio"
+    },
+    {
+      "aspect": "RF front end",
+      "value": "An appropriate front-end or PA/LNA solution, included if the design justifies it",
+      "brief_evidence": "by including an appropriate front-end or PA/LNA solution if justified."
+    },
+    {
+      "aspect": "Antenna interface",
+      "value": "An SMA antenna connector (gender and mounting style unspecified)",
+      "brief_evidence": "Provide USB-C, a battery input, and an SMA antenna connector."
+    },
+    {
+      "aspect": "Wired interface",
+      "value": "USB-C must be provided; the brief assigns it no function, so data, power, both, and any negotiation are unspecified",
+      "brief_evidence": "Provide USB-C, a battery input, and an SMA antenna connector."
+    },
+    {
+      "aspect": "Power sources",
+      "value": "A battery input is required (chemistry, voltage range, charging not stated); the brief gives USB-C no power role, so any second supply path is a design choice",
+      "brief_evidence": "Provide USB-C, a battery input, and an SMA antenna connector."
+    },
+    {
+      "aspect": "RF layout method",
+      "value": "Follow vendor RF reference layouts",
+      "brief_evidence": "Follow vendor RF reference layouts and document the matching/filter network"
+    },
+    {
+      "aspect": "Required documentation",
+      "value": "The matching/filter network and the power-current assumptions must be written up",
+      "brief_evidence": "document the matching/filter network and power-current assumptions."
+    },
+    {
+      "aspect": "Decision discipline",
+      "value": "Stated requirements are authoritative; open choices are the agent's to make and document, not to fill with invented user requirements",
+      "brief_evidence": "Treat stated requirements as authoritative; where the brief leaves choices open, make and document reasonable engineering decisions rather than inventing hidden user requirements."
     }
   ],
   "open_decisions": [
