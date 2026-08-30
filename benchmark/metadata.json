@@ -1,0 +1,16 @@
+{
+  "repo": "PCBA_SubGHz_Telemetry",
+  "title": "Sub-GHz Telemetry Radio",
+  "category": "rf-radio",
+  "difficulty": 4,
+  "detail": 2,
+  "layers": "4",
+  "stress": [
+    "RF matching",
+    "PA current pulses",
+    "antenna connector",
+    "mixed RF/digital"
+  ],
+  "benchmark_id": 23,
+  "brief_file": "BRIEF.md"
+}
